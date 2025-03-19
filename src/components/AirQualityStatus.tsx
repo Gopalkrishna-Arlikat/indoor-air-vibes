@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 
@@ -9,11 +10,11 @@ type AirQualityStatusProps = {
 };
 
 const statusMessages = {
-  great: ['Indoor Air Quality Is', 'Great'],
-  good: ['Indoor Air Quality Is', 'Good'],
-  moderate: ['Indoor Air Quality Is', 'Moderate'],
-  bad: ['Indoor Air Quality Is', 'Poor'],
-  harmful: ['Indoor Air Quality Is', 'Harmful']
+  great: 'Great',
+  good: 'Good',
+  moderate: 'Moderate',
+  bad: 'Poor',
+  harmful: 'Harmful'
 };
 
 const statusColors = {
@@ -44,18 +45,21 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
     }
   }, [status, currentStatus]);
 
-  const [firstLine, secondLine] = statusMessages[currentStatus];
+  const statusText = statusMessages[currentStatus];
 
   return (
     <div className={cn("transition-all duration-300", className)}>
-      <h1 
-        className={cn(
-          "text-5xl font-bold tracking-tight leading-tight",
-          visible ? "animate-fade-in" : "opacity-0"
-        )}
-      >
-        {firstLine}<br />
-        <span className={statusColors[currentStatus]}>{secondLine}</span>
+      <h1 className="text-5xl font-bold tracking-tight leading-tight">
+        Indoor Air Quality Is<br />
+        <span 
+          className={cn(
+            statusColors[currentStatus],
+            "transition-opacity duration-300",
+            visible ? "animate-fade-in" : "opacity-0"
+          )}
+        >
+          {statusText}
+        </span>
       </h1>
     </div>
   );
