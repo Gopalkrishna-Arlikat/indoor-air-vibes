@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -81,15 +82,16 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="h-screen flex bg-gradient-to-br from-background to-secondary/50 p-6 overflow-hidden">
-      <div className="flex-1 pr-6 flex flex-col justify-between overflow-hidden">
+    <div className="h-screen flex bg-gradient-to-br from-background to-secondary/50 p-8 overflow-hidden">
+      {/* Left Section - Air Quality Status */}
+      <div className="flex-1 pr-10 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
           <Location location="Reception, Gravity's Office" className="mt-6" />
           <DigitalClock className="mt-6" />
         </div>
         
-        <div className="flex flex-col items-start justify-center flex-1">
-          <AirQualityStatus status={airQuality} className="mb-6" />
+        <div className="flex flex-col items-start justify-center flex-1 pl-4">
+          <AirQualityStatus status={airQuality} className="mb-8" />
           <p className="text-xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
           </p>
@@ -102,7 +104,11 @@ const Dashboard = () => {
         </div>
       </div>
       
-      <div className="w-2/5 grid grid-cols-2 gap-4 overflow-y-auto pr-2">
+      {/* Separator */}
+      <div className="mx-4 border-r border-border/40 h-full"></div>
+      
+      {/* Right Section - Parameter Cards */}
+      <div className="w-2/5 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-4">
         <ParameterCard 
           icon={<Thermometer size={20} />} 
           label="Temperature" 
