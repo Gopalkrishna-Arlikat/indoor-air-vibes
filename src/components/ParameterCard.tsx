@@ -24,10 +24,10 @@ const ParameterCard = ({
 }: ParameterCardProps) => {
   return (
     <div className={cn(
-      "parameter-card bg-white border-gray-300", 
+      "parameter-card bg-white border border-gray-200 rounded-md shadow-sm", 
       className
     )}>
-      <AspectRatio ratio={4/3} className="h-full">
+      <AspectRatio ratio={4/3}>
         <div className="flex flex-col justify-between h-full p-3 sm:p-4">
           <div className="flex justify-between items-start">
             <span className="parameter-label text-xs sm:text-sm">{label}</span>
