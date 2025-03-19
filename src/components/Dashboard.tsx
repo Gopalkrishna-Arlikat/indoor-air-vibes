@@ -101,7 +101,7 @@ const Dashboard = () => {
             value={data.temperature} 
             unit="°C"
             trend="stable"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Droplets className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -109,7 +109,7 @@ const Dashboard = () => {
             value={data.humidity} 
             unit="%"
             trend="up"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Cloud className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -118,7 +118,7 @@ const Dashboard = () => {
             unit="ppm"
             color={Number(data.co2) > 1000 ? '#ff9f0a' : undefined}
             trend="up"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<FlaskConical className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -126,7 +126,7 @@ const Dashboard = () => {
             value={data.voc} 
             unit="ppb"
             trend="stable"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Wind className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -135,7 +135,7 @@ const Dashboard = () => {
             unit="μg/m³"
             color={Number(data.pm25) > 12 ? '#ff9f0a' : undefined}
             trend="down"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Wind className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -143,7 +143,7 @@ const Dashboard = () => {
             value={data.pm10} 
             unit="μg/m³"
             trend="down"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Gauge className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -151,7 +151,7 @@ const Dashboard = () => {
             value={data.pressure} 
             unit="hPa"
             trend="stable"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<AlertCircle className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -160,7 +160,7 @@ const Dashboard = () => {
             unit="ppm"
             color={Number(data.co) > 2 ? '#ff453a' : undefined}
             trend="stable"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Sun className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -168,7 +168,7 @@ const Dashboard = () => {
             value={data.light} 
             unit="lux"
             trend="down"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
           <ParameterCard 
             icon={<Volume2 className="h-3 w-3 sm:h-4 sm:w-4" />} 
@@ -176,7 +176,7 @@ const Dashboard = () => {
             value={data.noise} 
             unit="dB"
             trend="stable"
-            className="h-20 sm:h-24 md:h-28 w-full aspect-[4/3]"
+            className="h-[20vw] sm:h-[18vw]"
           />
         </div>
         
@@ -231,7 +231,7 @@ const Dashboard = () => {
             value={data.temperature} 
             unit="°C"
             trend="stable"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Droplets className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -239,7 +239,7 @@ const Dashboard = () => {
             value={data.humidity} 
             unit="%"
             trend="up"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Cloud className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -248,7 +248,7 @@ const Dashboard = () => {
             unit="ppm"
             color={Number(data.co2) > 1000 ? '#ff9f0a' : undefined}
             trend="up"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<FlaskConical className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -256,7 +256,7 @@ const Dashboard = () => {
             value={data.voc} 
             unit="ppb"
             trend="stable"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Wind className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -265,7 +265,7 @@ const Dashboard = () => {
             unit="μg/m³"
             color={Number(data.pm25) > 12 ? '#ff9f0a' : undefined}
             trend="down"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Wind className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -273,7 +273,7 @@ const Dashboard = () => {
             value={data.pm10} 
             unit="μg/m³"
             trend="down"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Gauge className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -281,7 +281,7 @@ const Dashboard = () => {
             value={data.pressure} 
             unit="hPa"
             trend="stable"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<AlertCircle className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -290,7 +290,7 @@ const Dashboard = () => {
             unit="ppm"
             color={Number(data.co) > 2 ? '#ff453a' : undefined}
             trend="stable"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Sun className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -298,7 +298,7 @@ const Dashboard = () => {
             value={data.light} 
             unit="lux"
             trend="down"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
           <ParameterCard 
             icon={<Volume2 className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
@@ -306,7 +306,7 @@ const Dashboard = () => {
             value={data.noise} 
             unit="dB"
             trend="stable"
-            className="md:h-28 lg:h-32 xl:h-36 aspect-[4/3]"
+            className="h-[13vh] md:h-[15vh] lg:h-[17vh] xl:h-[18vh]"
           />
         </div>
       </div>
