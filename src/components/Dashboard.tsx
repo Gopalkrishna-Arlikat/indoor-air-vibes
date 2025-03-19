@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -84,32 +85,32 @@ const Dashboard = () => {
 
   if (isMobile) {
     return (
-      <div className="flex flex-col bg-white min-h-screen p-4 overflow-auto">
+      <div className="h-full flex flex-col bg-white p-3 overflow-hidden">
         {/* Mobile Layout */}
-        <div className="flex justify-between items-start mb-4">
-          <Location location="Reception, Gravity's Office" className="mb-0" />
+        <div className="flex justify-between items-start mb-2">
+          <Location location="Reception, Gravity's Office" className="mb-0 text-sm" />
           <DigitalClock className="scale-75 origin-top-right" />
         </div>
         
-        <AirQualityStatus status={airQuality} className="my-4" />
+        <AirQualityStatus status={airQuality} className="my-2" />
         
-        <div className="grid grid-cols-2 gap-3 px-0 py-4 overflow-y-auto flex-1 pb-12">
+        <div className="grid grid-cols-2 gap-2 overflow-hidden flex-1">
           <ParameterCard 
-            icon={<Thermometer className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Thermometer className="h-3 w-3" />} 
             label="Temperature" 
             value={data.temperature} 
             unit="°C"
             trend="stable"
           />
           <ParameterCard 
-            icon={<Droplets className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Droplets className="h-3 w-3" />} 
             label="Humidity" 
             value={data.humidity} 
             unit="%"
             trend="up"
           />
           <ParameterCard 
-            icon={<Cloud className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Cloud className="h-3 w-3" />} 
             label="CO₂" 
             value={data.co2} 
             unit="ppm"
@@ -117,14 +118,14 @@ const Dashboard = () => {
             trend="up"
           />
           <ParameterCard 
-            icon={<FlaskConical className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<FlaskConical className="h-3 w-3" />} 
             label="VOC" 
             value={data.voc} 
             unit="ppb"
             trend="stable"
           />
           <ParameterCard 
-            icon={<Wind className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Wind className="h-3 w-3" />} 
             label="PM2.5" 
             value={data.pm25} 
             unit="μg/m³"
@@ -132,36 +133,36 @@ const Dashboard = () => {
             trend="down"
           />
           <ParameterCard 
-            icon={<Wind className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Wind className="h-3 w-3" />} 
             label="PM10" 
             value={data.pm10} 
             unit="μg/m³"
             trend="down"
           />
           <ParameterCard 
-            icon={<Gauge className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Gauge className="h-3 w-3" />} 
             label="Pressure" 
             value={data.pressure} 
             unit="hPa"
             trend="stable"
           />
           <ParameterCard 
-            icon={<AlertCircle className="h-3 w-3 sm:h-4 sm:w-4" />} 
-            label="Carbon Monoxide" 
+            icon={<AlertCircle className="h-3 w-3" />} 
+            label="CO" 
             value={data.co} 
             unit="ppm"
             color={Number(data.co) > 2 ? '#ff453a' : undefined}
             trend="stable"
           />
           <ParameterCard 
-            icon={<Sun className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Sun className="h-3 w-3" />} 
             label="Light" 
             value={data.light} 
             unit="lux"
             trend="down"
           />
           <ParameterCard 
-            icon={<Volume2 className="h-3 w-3 sm:h-4 sm:w-4" />} 
+            icon={<Volume2 className="h-3 w-3" />} 
             label="Noise" 
             value={data.noise} 
             unit="dB"
@@ -169,8 +170,8 @@ const Dashboard = () => {
           />
         </div>
         
-        <div className="text-center pt-2 pb-4">
-          <p className="text-sm animate-slide-up">
+        <div className="text-center pt-1 pb-1">
+          <p className="text-xs">
             <span className="text-gray-500">Powered by </span>
             <span className="text-[#0EA5E9] font-medium">SensorMagics™</span>
           </p>
@@ -181,15 +182,15 @@ const Dashboard = () => {
 
   // Tablet and desktop layout
   return (
-    <div className="h-screen flex bg-white p-0 overflow-hidden">
+    <div className="h-screen flex bg-white overflow-hidden">
       {/* Left Section - Air Quality Status */}
-      <div className="w-3/5 md:w-1/2 lg:w-3/5 px-4 md:px-8 flex flex-col justify-between overflow-hidden">
+      <div className="w-3/5 md:w-1/2 lg:w-3/5 px-4 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
           <div className="invisible">
             {/* Placeholder to maintain spacing */}
-            <Location location="" className="mt-6" />
+            <Location location="" className="mt-4" />
           </div>
-          <DigitalClock className="mt-6" />
+          <DigitalClock className="mt-4" />
         </div>
         
         <div className="flex flex-col items-start justify-center flex-1 pl-4">
@@ -200,7 +201,7 @@ const Dashboard = () => {
           </p>
         </div>
         
-        <div className="text-left pl-4 pb-6">
+        <div className="text-left pl-4 pb-4">
           <p className="text-sm animate-slide-up">
             <span className="text-gray-500">Powered by </span>
             <span className="text-[#0EA5E9] font-semibold">SensorMagics™</span>
@@ -213,23 +214,23 @@ const Dashboard = () => {
       
       {/* Right Section - Parameter Cards */}
       <div className="w-2/5 md:w-1/2 lg:w-2/5 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-2 gap-3 md:gap-4 p-5 md:p-6 lg:p-8 overflow-y-auto flex-1">
+        <div className="grid grid-cols-2 gap-3 p-3 md:p-4 lg:p-5 h-full">
           <ParameterCard 
-            icon={<Thermometer className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Thermometer className="h-4 w-4" />} 
             label="Temperature" 
             value={data.temperature} 
             unit="°C"
             trend="stable"
           />
           <ParameterCard 
-            icon={<Droplets className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Droplets className="h-4 w-4" />} 
             label="Humidity" 
             value={data.humidity} 
             unit="%"
             trend="up"
           />
           <ParameterCard 
-            icon={<Cloud className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Cloud className="h-4 w-4" />} 
             label="CO₂" 
             value={data.co2} 
             unit="ppm"
@@ -237,14 +238,14 @@ const Dashboard = () => {
             trend="up"
           />
           <ParameterCard 
-            icon={<FlaskConical className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<FlaskConical className="h-4 w-4" />} 
             label="VOC" 
             value={data.voc} 
             unit="ppb"
             trend="stable"
           />
           <ParameterCard 
-            icon={<Wind className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Wind className="h-4 w-4" />} 
             label="PM2.5" 
             value={data.pm25} 
             unit="μg/m³"
@@ -252,36 +253,36 @@ const Dashboard = () => {
             trend="down"
           />
           <ParameterCard 
-            icon={<Wind className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Wind className="h-4 w-4" />} 
             label="PM10" 
             value={data.pm10} 
             unit="μg/m³"
             trend="down"
           />
           <ParameterCard 
-            icon={<Gauge className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
-            label="Barometric Pressure" 
+            icon={<Gauge className="h-4 w-4" />} 
+            label="Pressure" 
             value={data.pressure} 
             unit="hPa"
             trend="stable"
           />
           <ParameterCard 
-            icon={<AlertCircle className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
-            label="Carbon Monoxide" 
+            icon={<AlertCircle className="h-4 w-4" />} 
+            label="CO" 
             value={data.co} 
             unit="ppm"
             color={Number(data.co) > 2 ? '#ff453a' : undefined}
             trend="stable"
           />
           <ParameterCard 
-            icon={<Sun className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Sun className="h-4 w-4" />} 
             label="Light" 
             value={data.light} 
             unit="lux"
             trend="down"
           />
           <ParameterCard 
-            icon={<Volume2 className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
+            icon={<Volume2 className="h-4 w-4" />} 
             label="Noise" 
             value={data.noise} 
             unit="dB"

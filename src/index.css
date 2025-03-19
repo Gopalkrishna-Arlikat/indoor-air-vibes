@@ -63,7 +63,7 @@
   }
   
   .parameter-card {
-    @apply glass-card rounded-2xl transition-all duration-300 hover:shadow-md animate-scale-in;
+    @apply glass-card rounded-xl transition-all duration-300 hover:shadow-md;
   }
   
   .parameter-value {
