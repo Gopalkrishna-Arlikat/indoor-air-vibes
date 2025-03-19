@@ -14,7 +14,7 @@ const Location = ({ location, className }: LocationProps) => {
       before:content-[''] before:absolute before:inset-0 
       before:rounded-full before:p-[2px] before:-z-10
       before:bg-gradient-to-r before:from-[#D3E4FD] before:via-[#FFDEE2] before:to-[#E5DEFF]
-      before:animate-pulse-slow shadow-lg
+      before:animate-pulse-slow
       ${className}
     `}>
       <MapPin className="mr-2 h-4 w-4 text-[#0EA5E9]" />
