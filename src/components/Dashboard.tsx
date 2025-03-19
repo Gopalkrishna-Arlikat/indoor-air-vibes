@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -99,6 +100,13 @@ const Dashboard = () => {
             Breathe better, live longer.
           </p>
         </div>
+        
+        {/* Moved from right section to left section and positioned higher */}
+        <div className="text-left pl-4 pb-6">
+          <p className="text-sm text-muted-foreground/70 animate-slide-up">
+            Powered by SensorMagics™
+          </p>
+        </div>
       </div>
       
       {/* Separator - Full height from top to bottom */}
@@ -182,11 +190,7 @@ const Dashboard = () => {
           />
         </div>
         
-        <div className="text-right pr-6 pb-4">
-          <p className="text-sm text-muted-foreground/70 animate-slide-up">
-            Powered by SensorMagics™
-          </p>
-        </div>
+        {/* Removed the "Powered by SensorMagics™" section from here */}
       </div>
     </div>
   );
