@@ -22,7 +22,7 @@ const ParameterCard = ({
   className
 }: ParameterCardProps) => {
   return (
-    <div className={cn("parameter-card", className)}>
+    <div className={cn("parameter-card bg-white border-gray-300", className)}>
       <div className="flex justify-between items-start mb-2">
         <span className="parameter-label">{label}</span>
         <div className="text-muted-foreground/80">{icon}</div>

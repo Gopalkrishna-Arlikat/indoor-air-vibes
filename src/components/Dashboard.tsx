@@ -82,7 +82,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="h-screen flex bg-gradient-to-br from-background to-secondary/50 p-8 overflow-hidden">
+    <div className="h-screen flex bg-white p-8 overflow-hidden">
       {/* Left Section - Air Quality Status */}
       <div className="flex-1 pr-10 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
@@ -105,7 +105,7 @@ const Dashboard = () => {
       </div>
       
       {/* Separator */}
-      <div className="mx-4 border-r border-border/40 h-full"></div>
+      <div className="mx-4 border-r border-gray-300 h-full"></div>
       
       {/* Right Section - Parameter Cards */}
       <div className="w-2/5 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-4">
