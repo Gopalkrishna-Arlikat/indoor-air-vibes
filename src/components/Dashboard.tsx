@@ -181,7 +181,7 @@ const Dashboard = () => {
         </div>
         
         <div className="text-center pt-2 pb-4">
-          <p className="text-sm text-muted-foreground/70 animate-slide-up">
+          <p className="text-sm text-muted-foreground animate-slide-up">
             Powered by SensorMagics™
           </p>
         </div>
@@ -211,7 +211,7 @@ const Dashboard = () => {
         </div>
         
         <div className="text-left pl-4 pb-6">
-          <p className="text-sm text-muted-foreground/70 animate-slide-up">
+          <p className="text-sm text-black/80 font-medium animate-slide-up">
             Powered by SensorMagics™
           </p>
         </div>
