@@ -10,11 +10,11 @@ type AirQualityStatusProps = {
 };
 
 const statusMessages = {
-  great: 'Indoor Air Quality Is Great',
-  good: 'Indoor Air Quality Is Good',
-  moderate: 'Indoor Air Quality Is Moderate',
-  bad: 'Indoor Air Quality Is Poor',
-  harmful: 'Indoor Air Quality Is Harmful'
+  great: ['Indoor Air Quality', 'Is Great'],
+  good: ['Indoor Air Quality', 'Is Good'],
+  moderate: ['Indoor Air Quality', 'Is Moderate'],
+  bad: ['Indoor Air Quality', 'Is Poor'],
+  harmful: ['Indoor Air Quality', 'Is Harmful']
 };
 
 const statusColors = {
@@ -45,22 +45,18 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
     }
   }, [status, currentStatus]);
 
-  // Split the message to highlight only the last word
-  const message = statusMessages[currentStatus];
-  const lastSpaceIndex = message.lastIndexOf(' ');
-  const textBeforeLastWord = message.substring(0, lastSpaceIndex + 1);
-  const lastWord = message.substring(lastSpaceIndex + 1);
+  const [firstLine, secondLine] = statusMessages[currentStatus];
 
   return (
     <div className={cn("transition-all duration-300", className)}>
       <h1 
         className={cn(
-          "text-5xl font-bold tracking-tight",
+          "text-5xl font-bold tracking-tight leading-tight",
           visible ? "animate-fade-in" : "opacity-0"
         )}
       >
-        {textBeforeLastWord}
-        <span className={statusColors[currentStatus]}>{lastWord}</span>
+        {firstLine}<br />
+        <span className={statusColors[currentStatus]}>{secondLine}</span>
       </h1>
     </div>
   );
