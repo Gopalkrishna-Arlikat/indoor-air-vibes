@@ -17,7 +17,7 @@ const Location = ({ location, className }: LocationProps) => {
       before:animate-pulse-slow shadow-lg
       ${className}
     `}>
-      <MapPin className="mr-2 h-4 w-4 text-black" />
+      <MapPin className="mr-2 h-4 w-4 text-[#0EA5E9]" />
       <span className="font-medium text-sm text-black">{location}</span>
     </div>
   );
