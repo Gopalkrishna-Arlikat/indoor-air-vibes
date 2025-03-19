@@ -107,24 +107,24 @@ const Dashboard = () => {
       {/* Separator - Full height from top to bottom */}
       <div className="border-r border-gray-400 h-full"></div>
       
-      {/* Right Section - Parameter Cards - Increased width from w-2/5 to w-1/2 */}
-      <div className="w-1/2 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-8 py-8">
+      {/* Right Section - Parameter Cards */}
+      <div className="w-1/2 grid grid-cols-2 gap-3 overflow-y-auto pr-2 pl-6 py-6">
         <ParameterCard 
-          icon={<Thermometer size={20} />} 
+          icon={<Thermometer size={18} />} 
           label="Temperature" 
           value={data.temperature} 
           unit="°C"
           trend="stable"
         />
         <ParameterCard 
-          icon={<Droplets size={20} />} 
+          icon={<Droplets size={18} />} 
           label="Humidity" 
           value={data.humidity} 
           unit="%"
           trend="up"
         />
         <ParameterCard 
-          icon={<Cloud size={20} />} 
+          icon={<Cloud size={18} />} 
           label="CO₂" 
           value={data.co2} 
           unit="ppm"
@@ -132,14 +132,14 @@ const Dashboard = () => {
           trend="up"
         />
         <ParameterCard 
-          icon={<FlaskConical size={20} />} 
+          icon={<FlaskConical size={18} />} 
           label="VOC" 
           value={data.voc} 
           unit="ppb"
           trend="stable"
         />
         <ParameterCard 
-          icon={<Wind size={20} />} 
+          icon={<Wind size={18} />} 
           label="PM2.5" 
           value={data.pm25} 
           unit="μg/m³"
@@ -147,21 +147,21 @@ const Dashboard = () => {
           trend="down"
         />
         <ParameterCard 
-          icon={<Wind size={20} />} 
+          icon={<Wind size={18} />} 
           label="PM10" 
           value={data.pm10} 
           unit="μg/m³"
           trend="down"
         />
         <ParameterCard 
-          icon={<Gauge size={20} />} 
+          icon={<Gauge size={18} />} 
           label="Barometric Pressure" 
           value={data.pressure} 
           unit="hPa"
           trend="stable"
         />
         <ParameterCard 
-          icon={<AlertCircle size={20} />} 
+          icon={<AlertCircle size={18} />} 
           label="Carbon Monoxide" 
           value={data.co} 
           unit="ppm"
@@ -169,14 +169,14 @@ const Dashboard = () => {
           trend="stable"
         />
         <ParameterCard 
-          icon={<Sun size={20} />} 
+          icon={<Sun size={18} />} 
           label="Light" 
           value={data.light} 
           unit="lux"
           trend="down"
         />
         <ParameterCard 
-          icon={<Volume2 size={20} />} 
+          icon={<Volume2 size={18} />} 
           label="Noise" 
           value={data.noise} 
           unit="dB"

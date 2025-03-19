@@ -22,17 +22,20 @@ const ParameterCard = ({
   className
 }: ParameterCardProps) => {
   return (
-    <div className={cn("parameter-card bg-white border-gray-300", className)}>
-      <div className="flex justify-between items-start mb-2">
-        <span className="parameter-label">{label}</span>
+    <div className={cn(
+      "parameter-card bg-white border-gray-300 h-32 w-full max-w-[220px]", 
+      className
+    )}>
+      <div className="flex justify-between items-start mb-1">
+        <span className="parameter-label text-xs">{label}</span>
         <div className="text-muted-foreground/80">{icon}</div>
       </div>
       
       <div className="flex items-baseline space-x-1 mt-auto">
-        <span className="parameter-value" style={color ? { color } : undefined}>
+        <span className="parameter-value text-2xl" style={color ? { color } : undefined}>
           {value}
         </span>
-        <span className="text-sm font-medium text-muted-foreground">
+        <span className="text-xs font-medium text-muted-foreground">
           {unit}
         </span>
       </div>
