@@ -83,8 +83,8 @@ const Dashboard = () => {
 
   return (
     <div className="h-screen flex bg-white p-0 overflow-hidden">
-      {/* Left Section - Air Quality Status */}
-      <div className="flex-1 px-8 flex flex-col justify-between overflow-hidden">
+      {/* Left Section - Air Quality Status - Increased to 60% */}
+      <div className="w-3/5 px-8 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
           <Location location="Reception, Gravity's Office" className="mt-6" />
           <DigitalClock className="mt-6" />
@@ -107,8 +107,8 @@ const Dashboard = () => {
       {/* Separator - Full height from top to bottom */}
       <div className="border-r border-gray-400 h-full"></div>
       
-      {/* Right Section - Parameter Cards */}
-      <div className="w-1/2 grid grid-cols-2 gap-3 overflow-y-auto pr-2 pl-6 py-6">
+      {/* Right Section - Parameter Cards - Reduced to 40% */}
+      <div className="w-2/5 grid grid-cols-2 gap-3 overflow-y-auto pr-2 pl-6 py-6">
         <ParameterCard 
           icon={<Thermometer size={18} />} 
           label="Temperature" 
