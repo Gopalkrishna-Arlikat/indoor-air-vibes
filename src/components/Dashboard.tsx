@@ -181,8 +181,9 @@ const Dashboard = () => {
         </div>
         
         <div className="text-center pt-2 pb-4">
-          <p className="text-sm text-muted-foreground animate-slide-up">
-            Powered by SensorMagics™
+          <p className="text-sm animate-slide-up">
+            <span className="text-gray-500">Powered by </span>
+            <span className="text-black font-medium">SensorMagics™</span>
           </p>
         </div>
       </div>
@@ -211,8 +212,9 @@ const Dashboard = () => {
         </div>
         
         <div className="text-left pl-4 pb-6">
-          <p className="text-sm text-black/80 font-medium animate-slide-up">
-            Powered by SensorMagics™
+          <p className="text-sm animate-slide-up">
+            <span className="text-gray-500">Powered by </span>
+            <span className="text-black font-semibold">SensorMagics™</span>
           </p>
         </div>
       </div>
