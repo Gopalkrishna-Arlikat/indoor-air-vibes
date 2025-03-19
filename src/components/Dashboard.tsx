@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -94,7 +93,7 @@ const Dashboard = () => {
         </div>
         
         <div className="flex flex-col items-start justify-center flex-1 pl-4">
-          <Location location="Reception, Gravity's Office" className="mb-4 animate-scale-in" />
+          <Location location="Reception, Gravity's Office" className="mb-8 animate-scale-in" />
           <AirQualityStatus status={airQuality} className="mb-8" />
           <p className="text-xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
