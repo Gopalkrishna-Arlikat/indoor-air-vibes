@@ -8,7 +8,15 @@ type LocationProps = {
 
 const Location = ({ location, className }: LocationProps) => {
   return (
-    <div className={`inline-flex items-center px-4 py-2 rounded-full glass-card animate-slide-down ${className}`}>
+    <div className={`
+      inline-flex items-center px-4 py-2 rounded-full 
+      glass-card animate-slide-down relative
+      before:content-[''] before:absolute before:inset-0 
+      before:rounded-full before:p-[1.5px] before:-z-10
+      before:bg-gradient-to-r before:from-blue-100 before:via-pink-100 before:to-purple-100
+      before:animate-pulse-slow
+      ${className}
+    `}>
       <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
       <span className="font-medium text-sm">{location}</span>
     </div>
