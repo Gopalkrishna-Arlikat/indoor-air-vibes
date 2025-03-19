@@ -183,7 +183,7 @@ const Dashboard = () => {
         <div className="text-center pt-2 pb-4">
           <p className="text-sm animate-slide-up">
             <span className="text-gray-500">Powered by </span>
-            <span className="text-black font-medium">SensorMagics™</span>
+            <span className="text-[#0EA5E9] font-medium">SensorMagics™</span>
           </p>
         </div>
       </div>
@@ -214,7 +214,7 @@ const Dashboard = () => {
         <div className="text-left pl-4 pb-6">
           <p className="text-sm animate-slide-up">
             <span className="text-gray-500">Powered by </span>
-            <span className="text-black font-semibold">SensorMagics™</span>
+            <span className="text-[#0EA5E9] font-semibold">SensorMagics™</span>
           </p>
         </div>
       </div>
