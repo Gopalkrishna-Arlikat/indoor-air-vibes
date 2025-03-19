@@ -45,10 +45,11 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
     }
   }, [status, currentStatus]);
 
-  // Get the first letter of the status message
+  // Split the message to highlight only the last word
   const message = statusMessages[currentStatus];
-  const firstLetter = message.charAt(0);
-  const restOfMessage = message.slice(1);
+  const lastSpaceIndex = message.lastIndexOf(' ');
+  const textBeforeLastWord = message.substring(0, lastSpaceIndex + 1);
+  const lastWord = message.substring(lastSpaceIndex + 1);
 
   return (
     <div className={cn("transition-all duration-300", className)}>
@@ -58,8 +59,8 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
           visible ? "animate-fade-in" : "opacity-0"
         )}
       >
-        <span className={statusColors[currentStatus]}>{firstLetter}</span>
-        {restOfMessage}
+        {textBeforeLastWord}
+        <span className={statusColors[currentStatus]}>{lastWord}</span>
       </h1>
     </div>
   );
