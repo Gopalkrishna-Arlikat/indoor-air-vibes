@@ -26,25 +26,25 @@ const ParameterCard = ({
       "parameter-card bg-white border-gray-300 w-full", 
       className
     )}>
-      <div className="flex justify-between items-start mb-1">
-        <span className="parameter-label text-xs">{label}</span>
-        <div className="text-muted-foreground/80">{icon}</div>
+      <div className="flex justify-between items-start mb-1 sm:mb-2">
+        <span className="parameter-label text-xs sm:text-sm">{label}</span>
+        <div className="text-muted-foreground/80 text-base sm:text-lg">{icon}</div>
       </div>
       
       <div className="flex items-baseline space-x-1 mt-auto">
-        <span className="parameter-value text-lg sm:text-xl md:text-2xl" style={color ? { color } : undefined}>
+        <span className="parameter-value text-lg sm:text-xl md:text-2xl lg:text-3xl" style={color ? { color } : undefined}>
           {value}
         </span>
-        <span className="text-xs font-medium text-muted-foreground">
+        <span className="text-xs sm:text-sm font-medium text-muted-foreground">
           {unit}
         </span>
       </div>
       
       {trend && (
-        <div className="mt-1">
-          {trend === 'up' && <span className="text-xs text-air-good">↑ Rising</span>}
-          {trend === 'down' && <span className="text-xs text-air-good">↓ Falling</span>}
-          {trend === 'stable' && <span className="text-xs text-muted-foreground">→ Stable</span>}
+        <div className="mt-1 sm:mt-2">
+          {trend === 'up' && <span className="text-xs sm:text-sm text-air-good">↑ Rising</span>}
+          {trend === 'down' && <span className="text-xs sm:text-sm text-air-good">↓ Falling</span>}
+          {trend === 'stable' && <span className="text-xs sm:text-sm text-muted-foreground">→ Stable</span>}
         </div>
       )}
     </div>
