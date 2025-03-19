@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -100,92 +99,94 @@ const Dashboard = () => {
             Breathe better, live longer.
           </p>
         </div>
-        
-        <div className="flex justify-end">
-          <p className="text-sm text-muted-foreground/70 animate-slide-up">
-            Powered by SensorMagics™
-          </p>
-        </div>
       </div>
       
       {/* Separator - Full height from top to bottom */}
       <div className="border-r border-gray-400 h-full"></div>
       
       {/* Right Section - Parameter Cards - Reduced to 40% */}
-      <div className="w-2/5 grid grid-cols-2 gap-3 overflow-y-auto pr-2 pl-6 py-6">
-        <ParameterCard 
-          icon={<Thermometer size={18} />} 
-          label="Temperature" 
-          value={data.temperature} 
-          unit="°C"
-          trend="stable"
-        />
-        <ParameterCard 
-          icon={<Droplets size={18} />} 
-          label="Humidity" 
-          value={data.humidity} 
-          unit="%"
-          trend="up"
-        />
-        <ParameterCard 
-          icon={<Cloud size={18} />} 
-          label="CO₂" 
-          value={data.co2} 
-          unit="ppm"
-          color={Number(data.co2) > 1000 ? '#ff9f0a' : undefined}
-          trend="up"
-        />
-        <ParameterCard 
-          icon={<FlaskConical size={18} />} 
-          label="VOC" 
-          value={data.voc} 
-          unit="ppb"
-          trend="stable"
-        />
-        <ParameterCard 
-          icon={<Wind size={18} />} 
-          label="PM2.5" 
-          value={data.pm25} 
-          unit="μg/m³"
-          color={Number(data.pm25) > 12 ? '#ff9f0a' : undefined}
-          trend="down"
-        />
-        <ParameterCard 
-          icon={<Wind size={18} />} 
-          label="PM10" 
-          value={data.pm10} 
-          unit="μg/m³"
-          trend="down"
-        />
-        <ParameterCard 
-          icon={<Gauge size={18} />} 
-          label="Barometric Pressure" 
-          value={data.pressure} 
-          unit="hPa"
-          trend="stable"
-        />
-        <ParameterCard 
-          icon={<AlertCircle size={18} />} 
-          label="Carbon Monoxide" 
-          value={data.co} 
-          unit="ppm"
-          color={Number(data.co) > 2 ? '#ff453a' : undefined}
-          trend="stable"
-        />
-        <ParameterCard 
-          icon={<Sun size={18} />} 
-          label="Light" 
-          value={data.light} 
-          unit="lux"
-          trend="down"
-        />
-        <ParameterCard 
-          icon={<Volume2 size={18} />} 
-          label="Noise" 
-          value={data.noise} 
-          unit="dB"
-          trend="stable"
-        />
+      <div className="w-2/5 flex flex-col overflow-hidden">
+        <div className="grid grid-cols-2 gap-3 overflow-y-auto pr-2 pl-6 py-6 flex-1">
+          <ParameterCard 
+            icon={<Thermometer size={18} />} 
+            label="Temperature" 
+            value={data.temperature} 
+            unit="°C"
+            trend="stable"
+          />
+          <ParameterCard 
+            icon={<Droplets size={18} />} 
+            label="Humidity" 
+            value={data.humidity} 
+            unit="%"
+            trend="up"
+          />
+          <ParameterCard 
+            icon={<Cloud size={18} />} 
+            label="CO₂" 
+            value={data.co2} 
+            unit="ppm"
+            color={Number(data.co2) > 1000 ? '#ff9f0a' : undefined}
+            trend="up"
+          />
+          <ParameterCard 
+            icon={<FlaskConical size={18} />} 
+            label="VOC" 
+            value={data.voc} 
+            unit="ppb"
+            trend="stable"
+          />
+          <ParameterCard 
+            icon={<Wind size={18} />} 
+            label="PM2.5" 
+            value={data.pm25} 
+            unit="μg/m³"
+            color={Number(data.pm25) > 12 ? '#ff9f0a' : undefined}
+            trend="down"
+          />
+          <ParameterCard 
+            icon={<Wind size={18} />} 
+            label="PM10" 
+            value={data.pm10} 
+            unit="μg/m³"
+            trend="down"
+          />
+          <ParameterCard 
+            icon={<Gauge size={18} />} 
+            label="Barometric Pressure" 
+            value={data.pressure} 
+            unit="hPa"
+            trend="stable"
+          />
+          <ParameterCard 
+            icon={<AlertCircle size={18} />} 
+            label="Carbon Monoxide" 
+            value={data.co} 
+            unit="ppm"
+            color={Number(data.co) > 2 ? '#ff453a' : undefined}
+            trend="stable"
+          />
+          <ParameterCard 
+            icon={<Sun size={18} />} 
+            label="Light" 
+            value={data.light} 
+            unit="lux"
+            trend="down"
+          />
+          <ParameterCard 
+            icon={<Volume2 size={18} />} 
+            label="Noise" 
+            value={data.noise} 
+            unit="dB"
+            trend="stable"
+          />
+        </div>
+        
+        <div className="text-right pr-6 pb-4">
+          <p className="text-sm text-muted-foreground/70 animate-slide-up">
+            Powered by SensorMagics™
+          </p>
+        </div>
       </div>
     </div>
   );
