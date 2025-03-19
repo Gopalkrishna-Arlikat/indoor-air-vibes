@@ -24,21 +24,21 @@ const ParameterCard = ({
 }: ParameterCardProps) => {
   return (
     <div className={cn(
-      "parameter-card bg-white border border-gray-200 rounded-md shadow-sm", 
+      "parameter-card bg-white border border-gray-200 rounded-md shadow-sm overflow-hidden", 
       className
     )}>
       <AspectRatio ratio={4/3}>
         <div className="flex flex-col justify-between h-full p-3 sm:p-4">
           <div className="flex justify-between items-start">
-            <span className="parameter-label text-xs sm:text-sm">{label}</span>
-            <div className="text-muted-foreground/80">{icon}</div>
+            <span className="parameter-label text-xs sm:text-sm truncate mr-1">{label}</span>
+            <div className="text-muted-foreground/80 flex-shrink-0">{icon}</div>
           </div>
           
           <div className="flex items-baseline space-x-1 mt-auto">
-            <span className="parameter-value text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl" style={color ? { color } : undefined}>
+            <span className="parameter-value text-base sm:text-lg md:text-xl lg:text-2xl truncate" style={color ? { color } : undefined}>
               {value}
             </span>
-            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground flex-shrink-0">
               {unit}
             </span>
           </div>
