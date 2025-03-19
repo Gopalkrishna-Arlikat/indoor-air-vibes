@@ -4,6 +4,7 @@ import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
 import Location from './Location';
 import DigitalClock from './DigitalClock';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   Thermometer, 
   Droplets, 
@@ -70,6 +71,7 @@ const Dashboard = () => {
   const [airQuality, setAirQuality] = useState<'great' | 'good' | 'moderate' | 'bad' | 'harmful'>(
     'great'
   );
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -81,10 +83,117 @@ const Dashboard = () => {
     return () => clearInterval(interval);
   }, []);
 
+  if (isMobile) {
+    return (
+      <div className="flex flex-col bg-white min-h-screen p-4 overflow-auto">
+        {/* Mobile Layout */}
+        <div className="flex justify-between items-start mb-4">
+          <Location location="Reception, Gravity's Office" className="mb-0" />
+          <DigitalClock className="scale-75 origin-top-right" />
+        </div>
+        
+        <AirQualityStatus status={airQuality} className="my-4" />
+        
+        <div className="grid grid-cols-2 gap-3 overflow-y-auto flex-1 pb-12">
+          <ParameterCard 
+            icon={<Thermometer size={16} />} 
+            label="Temperature" 
+            value={data.temperature} 
+            unit="°C"
+            trend="stable"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Droplets size={16} />} 
+            label="Humidity" 
+            value={data.humidity} 
+            unit="%"
+            trend="up"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Cloud size={16} />} 
+            label="CO₂" 
+            value={data.co2} 
+            unit="ppm"
+            color={Number(data.co2) > 1000 ? '#ff9f0a' : undefined}
+            trend="up"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<FlaskConical size={16} />} 
+            label="VOC" 
+            value={data.voc} 
+            unit="ppb"
+            trend="stable"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Wind size={16} />} 
+            label="PM2.5" 
+            value={data.pm25} 
+            unit="μg/m³"
+            color={Number(data.pm25) > 12 ? '#ff9f0a' : undefined}
+            trend="down"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Wind size={16} />} 
+            label="PM10" 
+            value={data.pm10} 
+            unit="μg/m³"
+            trend="down"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Gauge size={16} />} 
+            label="Pressure" 
+            value={data.pressure} 
+            unit="hPa"
+            trend="stable"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<AlertCircle size={16} />} 
+            label="Carbon Monoxide" 
+            value={data.co} 
+            unit="ppm"
+            color={Number(data.co) > 2 ? '#ff453a' : undefined}
+            trend="stable"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Sun size={16} />} 
+            label="Light" 
+            value={data.light} 
+            unit="lux"
+            trend="down"
+            className="h-28"
+          />
+          <ParameterCard 
+            icon={<Volume2 size={16} />} 
+            label="Noise" 
+            value={data.noise} 
+            unit="dB"
+            trend="stable"
+            className="h-28"
+          />
+        </div>
+        
+        <div className="text-center pt-2 pb-4">
+          <p className="text-sm text-muted-foreground/70 animate-slide-up">
+            Powered by SensorMagics™
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Tablet and desktop layout
   return (
     <div className="h-screen flex bg-white p-0 overflow-hidden">
-      {/* Left Section - Air Quality Status - Increased to 60% */}
-      <div className="w-3/5 px-8 flex flex-col justify-between overflow-hidden">
+      {/* Left Section - Air Quality Status */}
+      <div className="w-3/5 md:w-1/2 lg:w-3/5 px-4 md:px-8 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
           <div className="invisible">
             {/* Placeholder to maintain spacing */}
@@ -96,12 +205,11 @@ const Dashboard = () => {
         <div className="flex flex-col items-start justify-center flex-1 pl-4">
           <Location location="Reception, Gravity's Office" className="mb-4 animate-scale-in" />
           <AirQualityStatus status={airQuality} className="mb-3" />
-          <p className="text-2xl text-muted-foreground font-light animate-slide-up">
+          <p className="text-xl md:text-2xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
           </p>
         </div>
         
-        {/* Moved from right section to left section and positioned higher */}
         <div className="text-left pl-4 pb-6">
           <p className="text-sm text-muted-foreground/70 animate-slide-up">
             Powered by SensorMagics™
@@ -109,12 +217,12 @@ const Dashboard = () => {
         </div>
       </div>
       
-      {/* Separator - Full height from top to bottom */}
+      {/* Separator */}
       <div className="border-r border-gray-400 h-full"></div>
       
-      {/* Right Section - Parameter Cards - Reduced to 40% */}
-      <div className="w-2/5 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-2 gap-4 p-6 overflow-y-auto flex-1">
+      {/* Right Section - Parameter Cards */}
+      <div className="w-2/5 md:w-1/2 lg:w-2/5 flex flex-col overflow-hidden">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 p-4 md:p-6 overflow-y-auto flex-1">
           <ParameterCard 
             icon={<Thermometer size={18} />} 
             label="Temperature" 
@@ -189,8 +297,6 @@ const Dashboard = () => {
             trend="stable"
           />
         </div>
-        
-        {/* Removed the "Powered by SensorMagics™" section from here */}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type AirStatus = 'great' | 'good' | 'moderate' | 'bad' | 'harmful';
 
@@ -28,6 +29,7 @@ const statusColors = {
 const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
   const [visible, setVisible] = useState(true);
   const [currentStatus, setCurrentStatus] = useState<AirStatus>(status);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     if (status !== currentStatus) {
@@ -46,11 +48,12 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
   }, [status, currentStatus]);
 
   const statusText = statusMessages[currentStatus];
+  const textSizeClass = isMobile ? "text-3xl sm:text-4xl" : "text-5xl sm:text-6xl";
 
   return (
     <div className={cn("transition-all duration-300", className)}>
-      <h1 className="text-6xl font-bold tracking-tight leading-tight">
-        Indoor Air Quality Is<br />
+      <h1 className={`${textSizeClass} font-bold tracking-tight leading-tight`}>
+        {isMobile ? "Air Quality Is" : "Indoor Air Quality Is"}<br />
         <span 
           className={cn(
             statusColors[currentStatus],

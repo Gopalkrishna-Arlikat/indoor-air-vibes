@@ -1,8 +1,10 @@
 
 import { useState, useEffect } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const DigitalClock = ({ className }: { className?: string }) => {
   const [time, setTime] = useState(new Date());
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,10 +29,12 @@ const DigitalClock = ({ className }: { className?: string }) => {
     return date.toLocaleDateString('en-US', options);
   };
 
+  const timeClass = isMobile ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl";
+
   return (
     <div className={`flex flex-col items-end animate-slide-down ${className}`}>
-      <div className="text-4xl font-semibold tracking-tight">{formatTime(time)}</div>
-      <div className="text-sm text-muted-foreground">{formatDate(time)}</div>
+      <div className={`${timeClass} font-semibold tracking-tight`}>{formatTime(time)}</div>
+      <div className="text-xs sm:text-sm text-muted-foreground">{formatDate(time)}</div>
     </div>
   );
 };
