@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -81,9 +82,9 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="h-screen flex bg-white p-8 overflow-hidden">
+    <div className="h-screen flex bg-white p-0 overflow-hidden">
       {/* Left Section - Air Quality Status */}
-      <div className="flex-1 pr-10 flex flex-col justify-between overflow-hidden">
+      <div className="flex-1 px-8 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
           <Location location="Reception, Gravity's Office" className="mt-6" />
           <DigitalClock className="mt-6" />
@@ -103,11 +104,11 @@ const Dashboard = () => {
         </div>
       </div>
       
-      {/* Separator - Modified to extend from top to bottom */}
-      <div className="border-r border-gray-300 h-full"></div>
+      {/* Separator - Full height from top to bottom */}
+      <div className="border-r border-gray-400 h-full"></div>
       
       {/* Right Section - Parameter Cards */}
-      <div className="w-2/5 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-4">
+      <div className="w-2/5 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-8 py-8">
         <ParameterCard 
           icon={<Thermometer size={20} />} 
           label="Temperature" 
