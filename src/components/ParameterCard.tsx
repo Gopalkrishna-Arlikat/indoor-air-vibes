@@ -32,7 +32,7 @@ const ParameterCard = ({
       </div>
       
       <div className="flex items-baseline space-x-1 mt-auto">
-        <span className="parameter-value text-lg sm:text-xl md:text-2xl lg:text-3xl" style={color ? { color } : undefined}>
+        <span className="parameter-value text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl" style={color ? { color } : undefined}>
           {value}
         </span>
         <span className="text-xs sm:text-sm font-medium text-muted-foreground">
