@@ -45,16 +45,21 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
     }
   }, [status, currentStatus]);
 
+  // Get the first letter of the status message
+  const message = statusMessages[currentStatus];
+  const firstLetter = message.charAt(0);
+  const restOfMessage = message.slice(1);
+
   return (
     <div className={cn("transition-all duration-300", className)}>
       <h1 
         className={cn(
           "text-5xl font-bold tracking-tight",
-          statusColors[currentStatus],
           visible ? "animate-fade-in" : "opacity-0"
         )}
       >
-        {statusMessages[currentStatus]}
+        <span className={statusColors[currentStatus]}>{firstLetter}</span>
+        {restOfMessage}
       </h1>
     </div>
   );
