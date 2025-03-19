@@ -107,8 +107,8 @@ const Dashboard = () => {
       {/* Separator - Full height from top to bottom */}
       <div className="border-r border-gray-400 h-full"></div>
       
-      {/* Right Section - Parameter Cards */}
-      <div className="w-2/5 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-8 py-8">
+      {/* Right Section - Parameter Cards - Increased width from w-2/5 to w-1/2 */}
+      <div className="w-1/2 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-8 py-8">
         <ParameterCard 
           icon={<Thermometer size={20} />} 
           label="Temperature" 
