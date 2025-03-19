@@ -94,7 +94,7 @@ const Dashboard = () => {
         
         <AirQualityStatus status={airQuality} className="my-4" />
         
-        <div className="grid grid-cols-2 gap-3 overflow-y-auto flex-1 pb-12">
+        <div className="grid grid-cols-2 gap-3 p-4 sm:p-5 overflow-y-auto flex-1 pb-12">
           <ParameterCard 
             icon={<Thermometer size={16} />} 
             label="Temperature" 
@@ -224,7 +224,7 @@ const Dashboard = () => {
       
       {/* Right Section - Parameter Cards */}
       <div className="w-2/5 md:w-1/2 lg:w-2/5 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-2 gap-3 md:gap-4 p-4 md:p-6 overflow-y-auto flex-1">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 p-5 md:p-6 lg:p-8 overflow-y-auto flex-1">
           <ParameterCard 
             icon={<Thermometer size={18} />} 
             label="Temperature" 
