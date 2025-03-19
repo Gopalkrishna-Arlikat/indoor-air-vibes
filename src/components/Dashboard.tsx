@@ -114,7 +114,7 @@ const Dashboard = () => {
       
       {/* Right Section - Parameter Cards - Reduced to 40% */}
       <div className="w-2/5 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-2 gap-3 overflow-y-auto pr-2 pl-6 py-6 flex-1">
+        <div className="grid grid-cols-2 gap-4 p-6 overflow-y-auto flex-1">
           <ParameterCard 
             icon={<Thermometer size={18} />} 
             label="Temperature" 

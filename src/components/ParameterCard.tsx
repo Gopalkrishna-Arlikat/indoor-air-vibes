@@ -23,7 +23,7 @@ const ParameterCard = ({
 }: ParameterCardProps) => {
   return (
     <div className={cn(
-      "parameter-card bg-white border-gray-300 h-32 w-full max-w-[220px]", 
+      "parameter-card bg-white border-gray-300 h-32 w-full", 
       className
     )}>
       <div className="flex justify-between items-start mb-1">
