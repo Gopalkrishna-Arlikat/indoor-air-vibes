@@ -86,7 +86,10 @@ const Dashboard = () => {
       {/* Left Section - Air Quality Status - Increased to 60% */}
       <div className="w-3/5 px-8 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
-          <Location location="Reception, Gravity's Office" className="mt-6" />
+          <div className="invisible">
+            {/* Placeholder to maintain spacing */}
+            <Location location="" className="mt-6" />
+          </div>
           <DigitalClock className="mt-6" />
         </div>
         

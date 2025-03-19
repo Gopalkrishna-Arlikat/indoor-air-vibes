@@ -12,8 +12,8 @@ const Location = ({ location, className }: LocationProps) => {
       inline-flex items-center px-4 py-2 rounded-full 
       glass-card animate-slide-down relative
       before:content-[''] before:absolute before:inset-0 
-      before:rounded-full before:p-[1.5px] before:-z-10
-      before:bg-gradient-to-r before:from-blue-100 before:via-pink-100 before:to-purple-100
+      before:rounded-full before:p-[1px] before:-z-10
+      before:bg-gradient-to-r before:from-[#D3E4FD] before:via-[#FFDEE2] before:to-[#E5DEFF]
       before:animate-pulse-slow
       ${className}
     `}>
