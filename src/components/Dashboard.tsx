@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -12,11 +11,10 @@ import {
   Gauge, 
   Sun, 
   Volume2, 
-  Molecule,
+  FlaskConical, 
   AlertCircle
 } from 'lucide-react';
 
-// Simulate real-time data
 const generateRandomData = () => {
   return {
     temperature: (20 + Math.random() * 5).toFixed(1),
@@ -33,7 +31,6 @@ const generateRandomData = () => {
 };
 
 const calculateAirQuality = (data: ReturnType<typeof generateRandomData>) => {
-  // Simple algorithm to determine air quality
   if (
     Number(data.co2) < 600 && 
     Number(data.pm25) < 5 && 
@@ -73,7 +70,6 @@ const Dashboard = () => {
     'great'
   );
   
-  // Simulate real-time data updates
   useEffect(() => {
     const interval = setInterval(() => {
       const newData = generateRandomData();
@@ -86,7 +82,6 @@ const Dashboard = () => {
 
   return (
     <div className="h-screen flex bg-gradient-to-br from-background to-secondary/50 p-6 overflow-hidden">
-      {/* Left Section - Air Quality Status */}
       <div className="flex-1 pr-6 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between items-start">
           <Location location="Reception, Gravity's Office" className="mt-6" />
@@ -107,7 +102,6 @@ const Dashboard = () => {
         </div>
       </div>
       
-      {/* Right Section - Parameter Cards */}
       <div className="w-2/5 grid grid-cols-2 gap-4 overflow-y-auto pr-2">
         <ParameterCard 
           icon={<Thermometer size={20} />} 
@@ -132,7 +126,7 @@ const Dashboard = () => {
           trend="up"
         />
         <ParameterCard 
-          icon={<Molecule size={20} />} 
+          icon={<FlaskConical size={20} />} 
           label="VOC" 
           value={data.voc} 
           unit="ppb"
