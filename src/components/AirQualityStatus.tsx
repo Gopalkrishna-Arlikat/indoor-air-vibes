@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 
@@ -10,11 +9,11 @@ type AirQualityStatusProps = {
 };
 
 const statusMessages = {
-  great: ['Indoor Air Quality', 'Is Great'],
-  good: ['Indoor Air Quality', 'Is Good'],
-  moderate: ['Indoor Air Quality', 'Is Moderate'],
-  bad: ['Indoor Air Quality', 'Is Poor'],
-  harmful: ['Indoor Air Quality', 'Is Harmful']
+  great: ['Indoor Air Quality Is', 'Great'],
+  good: ['Indoor Air Quality Is', 'Good'],
+  moderate: ['Indoor Air Quality Is', 'Moderate'],
+  bad: ['Indoor Air Quality Is', 'Poor'],
+  harmful: ['Indoor Air Quality Is', 'Harmful']
 };
 
 const statusColors = {
