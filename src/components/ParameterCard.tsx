@@ -28,26 +28,26 @@ const ParameterCard = ({
       className
     )}>
       <AspectRatio ratio={16/9}>
-        <div className="flex flex-col justify-between h-full p-2 sm:p-3">
-          <div className="flex justify-between items-start mb-1">
-            <span className="parameter-label text-xs sm:text-sm truncate mr-2">{label}</span>
+        <div className="flex flex-col h-full p-2 sm:p-3">
+          <div className="flex justify-between items-center mb-1">
+            <div className="parameter-label text-xs sm:text-sm truncate max-w-[70%]">{label}</div>
             <div className="text-muted-foreground/80 flex-shrink-0">{icon}</div>
           </div>
           
           <div className="flex items-baseline mt-auto">
-            <span className="parameter-value text-base sm:text-lg md:text-xl truncate mr-1" style={color ? { color } : undefined}>
+            <div className="parameter-value text-base sm:text-lg md:text-xl truncate mr-1" style={color ? { color } : undefined}>
               {value}
-            </span>
-            <span className="text-xs sm:text-sm font-medium text-muted-foreground flex-shrink-0">
+            </div>
+            <div className="text-xs sm:text-sm font-medium text-muted-foreground whitespace-nowrap">
               {unit}
-            </span>
+            </div>
           </div>
           
           {trend && (
             <div className="mt-1">
-              {trend === 'up' && <span className="text-xs text-air-good">↑ Rising</span>}
-              {trend === 'down' && <span className="text-xs text-air-good">↓ Falling</span>}
-              {trend === 'stable' && <span className="text-xs text-muted-foreground">→ Stable</span>}
+              {trend === 'up' && <span className="text-xs text-air-good whitespace-nowrap">↑ Rising</span>}
+              {trend === 'down' && <span className="text-xs text-air-good whitespace-nowrap">↓ Falling</span>}
+              {trend === 'stable' && <span className="text-xs text-muted-foreground whitespace-nowrap">→ Stable</span>}
             </div>
           )}
         </div>

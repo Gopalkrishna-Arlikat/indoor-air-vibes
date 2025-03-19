@@ -85,16 +85,16 @@ const Dashboard = () => {
 
   if (isMobile) {
     return (
-      <div className="h-full flex flex-col bg-white p-3 overflow-hidden">
+      <div className="h-full flex flex-col bg-white p-2 overflow-hidden">
         {/* Mobile Layout */}
-        <div className="flex justify-between items-start mb-2">
+        <div className="flex justify-between items-start mb-1">
           <Location location="Reception, Gravity's Office" className="mb-0 text-sm" />
           <DigitalClock className="scale-75 origin-top-right" />
         </div>
         
-        <AirQualityStatus status={airQuality} className="my-2" />
+        <AirQualityStatus status={airQuality} className="mb-1" />
         
-        <div className="grid grid-cols-2 gap-2 overflow-hidden flex-1">
+        <div className="grid grid-cols-2 gap-1.5 overflow-hidden flex-1">
           <ParameterCard 
             icon={<Thermometer className="h-3 w-3" />} 
             label="Temperature" 
@@ -214,7 +214,7 @@ const Dashboard = () => {
       
       {/* Right Section - Parameter Cards */}
       <div className="w-2/5 md:w-1/2 lg:w-2/5 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-2 gap-3 p-3 md:p-4 lg:p-5 h-full">
+        <div className="grid grid-cols-2 gap-2 p-2 md:p-3 lg:p-4 h-full">
           <ParameterCard 
             icon={<Thermometer className="h-4 w-4" />} 
             label="Temperature" 
