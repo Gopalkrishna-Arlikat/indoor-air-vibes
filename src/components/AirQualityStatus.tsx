@@ -49,7 +49,7 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
 
   return (
     <div className={cn("transition-all duration-300", className)}>
-      <h1 className="text-5xl font-bold tracking-tight leading-tight">
+      <h1 className="text-6xl font-bold tracking-tight leading-tight">
         Indoor Air Quality Is<br />
         <span 
           className={cn(
