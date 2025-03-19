@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -104,8 +103,8 @@ const Dashboard = () => {
         </div>
       </div>
       
-      {/* Separator */}
-      <div className="mx-4 border-r border-gray-300 h-full"></div>
+      {/* Separator - Modified to extend from top to bottom */}
+      <div className="border-r border-gray-300 h-full"></div>
       
       {/* Right Section - Parameter Cards */}
       <div className="w-2/5 grid grid-cols-2 gap-5 overflow-y-auto pr-2 pl-4">
