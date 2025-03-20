@@ -203,19 +203,16 @@ const Dashboard = () => {
           <DigitalClock className="mt-6" />
         </div>
         
-        <div className="flex flex-col items-start justify-center flex-1 pl-4 md:pl-6 lg:pl-8 mt-[-8vh]">
-          <Location 
-            location="Reception, Gravity's Office" 
-            className="mb-3 md:mb-4 lg:mb-6 animate-scale-in md:scale-110 lg:scale-125" 
-          />
-          <AirQualityStatus status={airQuality} className="mb-2 md:mb-3 lg:mb-4 md:scale-110 lg:scale-125" />
-          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light animate-slide-up">
+        <div className="flex flex-col items-start justify-center flex-1 pl-4 mt-[-8vh]">
+          <Location location="Reception, Gravity's Office" className="mb-3 animate-scale-in" />
+          <AirQualityStatus status={airQuality} className="mb-2" />
+          <p className="text-xl md:text-2xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
           </p>
         </div>
         
-        <div className="text-left pl-4 md:pl-6 lg:pl-8 pb-6">
-          <p className="text-sm md:text-base lg:text-lg animate-slide-up">
+        <div className="text-left pl-4 pb-6">
+          <p className="text-sm animate-slide-up">
             <span className="text-gray-500">Powered by </span>
             <span className="text-[#0EA5E9] font-semibold">SensorMagics™</span>
           </p>
