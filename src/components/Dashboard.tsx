@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -222,7 +223,7 @@ const Dashboard = () => {
       
       {/* Right Section - Parameter Cards */}
       <div className="w-2/5 md:w-1/2 lg:w-2/5 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-2 gap-3 md:gap-4 p-5 md:p-6 lg:p-8 overflow-y-auto flex-1">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 p-5 md:p-6 lg:p-8 overflow-y-auto flex-1 py-8">
           <ParameterCard 
             icon={<Thermometer className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />} 
             label="Temperature" 
@@ -313,4 +314,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
