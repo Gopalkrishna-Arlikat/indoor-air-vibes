@@ -203,9 +203,9 @@ const Dashboard = () => {
           <DigitalClock className="mt-6" />
         </div>
         
-        <div className="flex flex-col items-start justify-center flex-1 pl-4 mt-[-8vh]">
-          <Location location="Reception, Gravity's Office" className="mb-3 animate-scale-in" />
-          <AirQualityStatus status={airQuality} className="mb-2" />
+        <div className="flex flex-col items-start justify-center flex-1 pl-4">
+          <Location location="Reception, Gravity's Office" className="mb-4 animate-scale-in" />
+          <AirQualityStatus status={airQuality} className="mb-3" />
           <p className="text-xl md:text-2xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
           </p>
