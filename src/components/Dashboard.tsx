@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ParameterCard from './ParameterCard';
 import AirQualityStatus from './AirQualityStatus';
@@ -190,7 +189,6 @@ const Dashboard = () => {
     );
   }
 
-  // Tablet and desktop layout
   return (
     <div className="h-screen flex bg-white p-0 overflow-hidden">
       {/* Left Section - Air Quality Status */}
@@ -203,16 +201,16 @@ const Dashboard = () => {
           <DigitalClock className="mt-6" />
         </div>
         
-        <div className="flex flex-col items-start justify-center flex-1 pl-4 mt-[-8vh]">
-          <Location location="Reception, Gravity's Office" className="mb-3 animate-scale-in" />
-          <AirQualityStatus status={airQuality} className="mb-2" />
-          <p className="text-2xl text-muted-foreground font-light animate-slide-up">
+        <div className="flex flex-col items-start justify-center flex-1 pl-4 md:pl-6 lg:pl-10 xl:pl-12 mt-[-8vh]">
+          <Location location="Reception, Gravity's Office" className="mb-3 md:mb-4 lg:mb-5 animate-scale-in" />
+          <AirQualityStatus status={airQuality} className="mb-2 md:mb-3 lg:mb-4" />
+          <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
           </p>
         </div>
         
-        <div className="text-left pl-4 pb-6">
-          <p className="text-base animate-slide-up">
+        <div className="text-left pl-4 md:pl-6 lg:pl-10 xl:pl-12 pb-6">
+          <p className="text-base md:text-lg lg:text-xl animate-slide-up">
             <span className="text-gray-500">Powered by </span>
             <span className="text-[#0EA5E9] font-semibold">SensorMagics™</span>
           </p>
@@ -315,3 +313,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
