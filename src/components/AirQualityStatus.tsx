@@ -48,11 +48,10 @@ const AirQualityStatus = ({ status, className }: AirQualityStatusProps) => {
   }, [status, currentStatus]);
 
   const statusText = statusMessages[currentStatus];
-  const textSizeClass = isMobile ? "text-3xl sm:text-4xl" : "text-5xl sm:text-6xl";
 
   return (
     <div className={cn("transition-all duration-300", className)}>
-      <h1 className={`${textSizeClass} font-bold tracking-tight leading-tight`}>
+      <h1 className="text-5xl font-bold tracking-tight leading-tight">
         {isMobile ? "Air Quality Is" : "Indoor Air Quality Is"}<br />
         <span 
           className={cn(

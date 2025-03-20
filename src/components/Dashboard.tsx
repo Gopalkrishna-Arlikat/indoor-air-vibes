@@ -181,7 +181,7 @@ const Dashboard = () => {
         </div>
         
         <div className="text-center pt-2 pb-4">
-          <p className="text-sm animate-slide-up">
+          <p className="text-base animate-slide-up">
             <span className="text-gray-500">Powered by </span>
             <span className="text-[#0EA5E9] font-medium">SensorMagics™</span>
           </p>
@@ -206,13 +206,13 @@ const Dashboard = () => {
         <div className="flex flex-col items-start justify-center flex-1 pl-4 mt-[-8vh]">
           <Location location="Reception, Gravity's Office" className="mb-3 animate-scale-in" />
           <AirQualityStatus status={airQuality} className="mb-2" />
-          <p className="text-xl md:text-2xl text-muted-foreground font-light animate-slide-up">
+          <p className="text-2xl text-muted-foreground font-light animate-slide-up">
             Breathe better, live longer.
           </p>
         </div>
         
         <div className="text-left pl-4 pb-6">
-          <p className="text-sm animate-slide-up">
+          <p className="text-base animate-slide-up">
             <span className="text-gray-500">Powered by </span>
             <span className="text-[#0EA5E9] font-semibold">SensorMagics™</span>
           </p>
